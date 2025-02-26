@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище Складской_учетModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="IdCategory" />
+    </Key>
+    <Property Name="IdCategory" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="IdClient" />
+    </Key>
+    <Property Name="IdClient" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="18" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="IdEmployee" />
+    </Key>
+    <Property Name="IdEmployee" Type="int" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Patronymic" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ExpenditureInvoice">
+    <Key>
+      <PropertyRef Name="IdExpenditureInvoice" />
+    </Key>
+    <Property Name="IdExpenditureInvoice" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InvoiceNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ShipmentDate" Type="date" Nullable="false" />
+    <Property Name="TotalPrice" Type="float" Nullable="false" />
+    <Property Name="IdClient" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ExpenditureInvoiceWarehouse">
+    <Key>
+      <PropertyRef Name="IdExpenditureInvoiceWarehouse" />
+    </Key>
+    <Property Name="IdExpenditureInvoiceWarehouse" Type="int" Nullable="false" />
+    <Property Name="IdExpenditureInvoice" Type="int" Nullable="false" />
+    <Property Name="IdWarehouse" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Goods">
+    <Key>
+      <PropertyRef Name="IdGoods" />
+    </Key>
+    <Property Name="IdGoods" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Article" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Barcode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IdCategory" Type="int" Nullable="false" />
+    <Property Name="IdUnit" Type="int" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="SerialNumber" Type="nvarchar(max)" />
+    <Property Name="MinimumBalance" Type="float" />
+  </EntityType>
+  <EntityType Name="GoodsWarehouse">
+    <Key>
+      <PropertyRef Name="IdGoodsWarehouse" />
+    </Key>
+    <Property Name="IdGoodsWarehouse" Type="int" Nullable="false" />
+    <Property Name="IdGoods" Type="int" Nullable="false" />
+    <Property Name="IdWarehouse" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IncomingInvoice">
+    <Key>
+      <PropertyRef Name="IdIncomingInvoice" />
+    </Key>
+    <Property Name="IdIncomingInvoice" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InvoiceNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DateReceipt" Type="date" Nullable="false" />
+    <Property Name="IdSupplier" Type="int" Nullable="false" />
+    <Property Name="TotalPrice" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IncomingInvoiceWarehouse">
+    <Key>
+      <PropertyRef Name="IdIncomingInvoiceWarehouse" />
+    </Key>
+    <Property Name="IdIncomingInvoiceWarehouse" Type="int" Nullable="false" />
+    <Property Name="IdIncomingInvoice" Type="int" Nullable="false" />
+    <Property Name="IdWarehouse" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Inventory">
+    <Key>
+      <PropertyRef Name="IdInventory" />
+    </Key>
+    <Property Name="IdInventory" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateEvent" Type="date" Nullable="false" />
+    <Property Name="IdResponsible" Type="int" Nullable="false" />
+    <Property Name="Result" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InventoryWarehouse">
+    <Key>
+      <PropertyRef Name="IdInventoryWarehouse" />
+    </Key>
+    <Property Name="IdInventoryWarehouse" Type="int" Nullable="false" />
+    <Property Name="IdIntentory" Type="int" Nullable="false" />
+    <Property Name="IdWarehouse" Type="int" Nullable="false" />
+    <Property Name="AccountingQuantity" Type="float" Nullable="false" />
+    <Property Name="ActualQuantity" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StorageArea">
+    <Key>
+      <PropertyRef Name="IdStorageArea" />
+    </Key>
+    <Property Name="IdStorageArea" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="IdSupplier" />
+    </Key>
+    <Property Name="IdSupplier" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="INNOrKPP" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Unit">
+    <Key>
+      <PropertyRef Name="IdUnit" />
+    </Key>
+    <Property Name="IdUnit" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Warehouse">
+    <Key>
+      <PropertyRef Name="IdWarehouse" />
+    </Key>
+    <Property Name="IdWarehouse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IdWarehouseType" Type="int" Nullable="false" />
+    <Property Name="IdStorageArea" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WarehouseType">
+    <Key>
+      <PropertyRef Name="IdWarehouseType" />
+    </Key>
+    <Property Name="IdWarehouseType" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ExpenditureInvoice_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="ExpenditureInvoice" Type="Self.ExpenditureInvoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="IdClient" />
+      </Principal>
+      <Dependent Role="ExpenditureInvoice">
+        <PropertyRef Name="IdClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExpenditureInvoiceWarehouse_ExpenditureInvoice">
+    <End Role="ExpenditureInvoice" Type="Self.ExpenditureInvoice" Multiplicity="1" />
+    <End Role="ExpenditureInvoiceWarehouse" Type="Self.ExpenditureInvoiceWarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExpenditureInvoice">
+        <PropertyRef Name="IdExpenditureInvoice" />
+      </Principal>
+      <Dependent Role="ExpenditureInvoiceWarehouse">
+        <PropertyRef Name="IdExpenditureInvoice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExpenditureInvoiceWarehouse_Warehouse">
+    <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="1" />
+    <End Role="ExpenditureInvoiceWarehouse" Type="Self.ExpenditureInvoiceWarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Warehouse">
+        <PropertyRef Name="IdWarehouse" />
+      </Principal>
+      <Dependent Role="ExpenditureInvoiceWarehouse">
+        <PropertyRef Name="IdWarehouse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Goods_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Goods" Type="Self.Goods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="IdCategory" />
+      </Principal>
+      <Dependent Role="Goods">
+        <PropertyRef Name="IdCategory" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Goods_Unit">
+    <End Role="Unit" Type="Self.Unit" Multiplicity="1" />
+    <End Role="Goods" Type="Self.Goods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit">
+        <PropertyRef Name="IdUnit" />
+      </Principal>
+      <Dependent Role="Goods">
+        <PropertyRef Name="IdUnit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GoodsWarehouse_Goods">
+    <End Role="Goods" Type="Self.Goods" Multiplicity="1" />
+    <End Role="GoodsWarehouse" Type="Self.GoodsWarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="IdGoods" />
+      </Principal>
+      <Dependent Role="GoodsWarehouse">
+        <PropertyRef Name="IdGoods" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GoodsWarehouse_Warehouse">
+    <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="1" />
+    <End Role="GoodsWarehouse" Type="Self.GoodsWarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Warehouse">
+        <PropertyRef Name="IdWarehouse" />
+      </Principal>
+      <Dependent Role="GoodsWarehouse">
+        <PropertyRef Name="IdWarehouse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IncomingInvoice_Supplier">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+    <End Role="IncomingInvoice" Type="Self.IncomingInvoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="IdSupplier" />
+      </Principal>
+      <Dependent Role="IncomingInvoice">
+        <PropertyRef Name="IdSupplier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IncomingInvoiceWarehouse_IncomingInvoice">
+    <End Role="IncomingInvoice" Type="Self.IncomingInvoice" Multiplicity="1" />
+    <End Role="IncomingInvoiceWarehouse" Type="Self.IncomingInvoiceWarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IncomingInvoice">
+        <PropertyRef Name="IdIncomingInvoice" />
+      </Principal>
+      <Dependent Role="IncomingInvoiceWarehouse">
+        <PropertyRef Name="IdIncomingInvoice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IncomingInvoiceWarehouse_Warehouse">
+    <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="1" />
+    <End Role="IncomingInvoiceWarehouse" Type="Self.IncomingInvoiceWarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Warehouse">
+        <PropertyRef Name="IdWarehouse" />
+      </Principal>
+      <Dependent Role="IncomingInvoiceWarehouse">
+        <PropertyRef Name="IdWarehouse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Inventory_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Inventory" Type="Self.Inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="IdEmployee" />
+      </Principal>
+      <Dependent Role="Inventory">
+        <PropertyRef Name="IdResponsible" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventoryWarehouse_Inventory">
+    <End Role="Inventory" Type="Self.Inventory" Multiplicity="1" />
+    <End Role="InventoryWarehouse" Type="Self.InventoryWarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory">
+        <PropertyRef Name="IdInventory" />
+      </Principal>
+      <Dependent Role="InventoryWarehouse">
+        <PropertyRef Name="IdIntentory" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventoryWarehouse_Warehouse">
+    <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="1" />
+    <End Role="InventoryWarehouse" Type="Self.InventoryWarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Warehouse">
+        <PropertyRef Name="IdWarehouse" />
+      </Principal>
+      <Dependent Role="InventoryWarehouse">
+        <PropertyRef Name="IdWarehouse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Warehouse_StorageArea">
+    <End Role="StorageArea" Type="Self.StorageArea" Multiplicity="1" />
+    <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StorageArea">
+        <PropertyRef Name="IdStorageArea" />
+      </Principal>
+      <Dependent Role="Warehouse">
+        <PropertyRef Name="IdStorageArea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Warehouse_WarehouseType">
+    <End Role="WarehouseType" Type="Self.WarehouseType" Multiplicity="1" />
+    <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WarehouseType">
+        <PropertyRef Name="IdWarehouseType" />
+      </Principal>
+      <Dependent Role="Warehouse">
+        <PropertyRef Name="IdWarehouseType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище Складской_учетModelContainer">
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExpenditureInvoice" EntityType="Self.ExpenditureInvoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExpenditureInvoiceWarehouse" EntityType="Self.ExpenditureInvoiceWarehouse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Goods" EntityType="Self.Goods" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GoodsWarehouse" EntityType="Self.GoodsWarehouse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IncomingInvoice" EntityType="Self.IncomingInvoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IncomingInvoiceWarehouse" EntityType="Self.IncomingInvoiceWarehouse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InventoryWarehouse" EntityType="Self.InventoryWarehouse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StorageArea" EntityType="Self.StorageArea" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Unit" EntityType="Self.Unit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Warehouse" EntityType="Self.Warehouse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WarehouseType" EntityType="Self.WarehouseType" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ExpenditureInvoice_Client" Association="Self.FK_ExpenditureInvoice_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="ExpenditureInvoice" EntitySet="ExpenditureInvoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExpenditureInvoiceWarehouse_ExpenditureInvoice" Association="Self.FK_ExpenditureInvoiceWarehouse_ExpenditureInvoice">
+      <End Role="ExpenditureInvoice" EntitySet="ExpenditureInvoice" />
+      <End Role="ExpenditureInvoiceWarehouse" EntitySet="ExpenditureInvoiceWarehouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExpenditureInvoiceWarehouse_Warehouse" Association="Self.FK_ExpenditureInvoiceWarehouse_Warehouse">
+      <End Role="Warehouse" EntitySet="Warehouse" />
+      <End Role="ExpenditureInvoiceWarehouse" EntitySet="ExpenditureInvoiceWarehouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Goods_Category" Association="Self.FK_Goods_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Goods" EntitySet="Goods" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Goods_Unit" Association="Self.FK_Goods_Unit">
+      <End Role="Unit" EntitySet="Unit" />
+      <End Role="Goods" EntitySet="Goods" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GoodsWarehouse_Goods" Association="Self.FK_GoodsWarehouse_Goods">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="GoodsWarehouse" EntitySet="GoodsWarehouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GoodsWarehouse_Warehouse" Association="Self.FK_GoodsWarehouse_Warehouse">
+      <End Role="Warehouse" EntitySet="Warehouse" />
+      <End Role="GoodsWarehouse" EntitySet="GoodsWarehouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IncomingInvoice_Supplier" Association="Self.FK_IncomingInvoice_Supplier">
+      <End Role="Supplier" EntitySet="Supplier" />
+      <End Role="IncomingInvoice" EntitySet="IncomingInvoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IncomingInvoiceWarehouse_IncomingInvoice" Association="Self.FK_IncomingInvoiceWarehouse_IncomingInvoice">
+      <End Role="IncomingInvoice" EntitySet="IncomingInvoice" />
+      <End Role="IncomingInvoiceWarehouse" EntitySet="IncomingInvoiceWarehouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IncomingInvoiceWarehouse_Warehouse" Association="Self.FK_IncomingInvoiceWarehouse_Warehouse">
+      <End Role="Warehouse" EntitySet="Warehouse" />
+      <End Role="IncomingInvoiceWarehouse" EntitySet="IncomingInvoiceWarehouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Inventory_Employee" Association="Self.FK_Inventory_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Inventory" EntitySet="Inventory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventoryWarehouse_Inventory" Association="Self.FK_InventoryWarehouse_Inventory">
+      <End Role="Inventory" EntitySet="Inventory" />
+      <End Role="InventoryWarehouse" EntitySet="InventoryWarehouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventoryWarehouse_Warehouse" Association="Self.FK_InventoryWarehouse_Warehouse">
+      <End Role="Warehouse" EntitySet="Warehouse" />
+      <End Role="InventoryWarehouse" EntitySet="InventoryWarehouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Warehouse_StorageArea" Association="Self.FK_Warehouse_StorageArea">
+      <End Role="StorageArea" EntitySet="StorageArea" />
+      <End Role="Warehouse" EntitySet="Warehouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Warehouse_WarehouseType" Association="Self.FK_Warehouse_WarehouseType">
+      <End Role="WarehouseType" EntitySet="WarehouseType" />
+      <End Role="Warehouse" EntitySet="Warehouse" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
