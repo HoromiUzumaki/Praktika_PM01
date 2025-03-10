@@ -11,14 +11,14 @@ namespace WebApplication1.Controllers
 {
     public class WarehouseController : ApiController
     {
-        private WarehouseManagementEntities db = new WarehouseManagementEntities();
+        private СкладыEntities db = new СкладыEntities();
        
         // GET: Warehouse
         [ResponseType(typeof(List<Response_Warehouse>))]
 
         public IHttpActionResult GetWarehouse()
         {
-            return Ok(db.Warehouses.ToList().ConvertAll(p => new Response_Warehouse(p)));
+            return Ok(db.Склады.ToList().ConvertAll(p => new Response_Warehouse(p)));
         }
     }
 }

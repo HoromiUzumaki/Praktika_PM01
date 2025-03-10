@@ -2,41 +2,41 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using WebApplication1.Models;
 
 namespace WebApplication1
 {
     public interface IAuthService
     {
-        string Authenticate(string username, string password);
-        string AuthenticateWith2FA(string username, string token);
+        Response_Пользователи Authenticate(string username, string password);
+        Response_Пользователи AuthenticateWith2FA(string username, string token);
     }
+
 
     public class AuthService : IAuthService
     {
-        private readonly List<Users> _users = new List<Users>
+        private readonly List<Пользователи> _пользователи = new List<Пользователи>
     {
-        new Users { UserID = 1, Username = "admin", PasswordHash = "hashed_password_1", RoleID = 1 },
-        new Users { UserID = 2, Username = "storekeeper", PasswordHash = "hashed_password_2", RoleID = 2 }
+        new Пользователи { IDПользователя = 1, ИмяПользователя = "admin", ХэшПароля = "hashed_password_1", Роль = "Admin", Фото = null },
+        new Пользователи { IDПользователя = 2, ИмяПользователя = "storekeeper", ХэшПароля = "hashed_password_2", Роль = "Storekeeper", Фото = null }
     };
 
-        public string Authenticate(string username, string password)
+        public Response_Пользователи Authenticate(string username, string password)
         {
-            var user = _users.SingleOrDefault(u => u.Username == username && u.PasswordHash == password);
-            if (user == null)
+            var пользователь = _пользователи.SingleOrDefault(u => u.ИмяПользователя == username && u.ХэшПароля == password);
+            if (пользователь == null)
                 return null;
 
-            // Генерация JWT-токена (упрощенно)
-            return "generated_jwt_token";
+            return new Response_Пользователи(пользователь);
         }
 
-        public string AuthenticateWith2FA(string username, string token)
+        public Response_Пользователи AuthenticateWith2FA(string username, string token)
         {
-            var user = _users.SingleOrDefault(u => u.Username == username);
-            if (user == null || token != "valid_2fa_token")
+            var пользователь = _пользователи.SingleOrDefault(u => u.ИмяПользователя == username);
+            if (пользователь == null || token != "valid_2fa_token")
                 return null;
 
-            // Генерация JWT-токена (упрощенно)
-            return "generated_jwt_token";
+            return new Response_Пользователи(пользователь);
         }
     }
 }

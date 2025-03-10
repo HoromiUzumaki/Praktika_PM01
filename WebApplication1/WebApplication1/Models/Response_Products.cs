@@ -7,30 +7,29 @@ namespace WebApplication1.Models
 {
     public class Response_Products
     {
-        public Response_Products(Products товары)
+        public Response_Products(Товары товары)
         {
-            ProductID = товары.ProductID;
-            Name = товары.Name;
-            Article = товары.Article;
-            Barcode = товары.Barcode;
-            Category = товары.Category;
-            UnitOfMeasurement = товары.UnitOfMeasurement;
-            Price = товары.Price;
-            ExpiryDate = товары.ExpiryDate;
-            SerialNumber = товары.SerialNumber;
-            MinimumStockLevel = товары.MinimumStockLevel;
+            IDТовара = товары.IDТовара;
+            Название = товары.Название;
+            Артикул = товары.Артикул;
+            Штрихкод = товары.Штрихкод;
+            Категория = товары.Категория;
+            ЕдиницаИзмерения = товары.ЕдиницаИзмерения;
+            Цена = товары.Цена;
+            СерийныйНомер = товары.СерийныйНомер;
+            МинимальныйЗапас = товары.МинимальныйЗапас;
+            
 
 
         }
-        public int ProductID { get; set; }
-        public string Name { get; set; }
-        public string Article { get; set; }
-        public string Barcode { get; set; }
-        public string Category { get; set; }
-        public string UnitOfMeasurement { get; set; }
-        public decimal Price { get; set; }
-        public Nullable<System.DateTime> ExpiryDate { get; set; }
-        public string SerialNumber { get; set; }
-        public Nullable<int> MinimumStockLevel { get; set; }
+        public int IDТовара { get; set; }
+        public string Название { get; set; }
+        public string Артикул { get; set; }
+        public string Штрихкод { get; set; }
+        public string Категория { get; set; }
+        public string ЕдиницаИзмерения { get; set; }
+        public decimal Цена { get; set; }
+        public string СерийныйНомер { get; set; }
+        public Nullable<int> МинимальныйЗапас { get; set; }
     }
 }

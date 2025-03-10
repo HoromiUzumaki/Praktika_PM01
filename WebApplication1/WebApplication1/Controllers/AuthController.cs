@@ -9,7 +9,6 @@ namespace WebApplication1.Controllers
     [System.Web.Http.RoutePrefix("api/auth")]
     public class AuthController : ApiController
     {
-        
         private readonly IAuthService _authService;
 
         public AuthController(IAuthService authService)
@@ -24,11 +23,11 @@ namespace WebApplication1.Controllers
             if (request == null || string.IsNullOrEmpty(request.Username) || string.IsNullOrEmpty(request.Password))
                 return BadRequest("Invalid request data.");
 
-            var token = _authService.Authenticate(request.Username, request.Password);
-            if (token == null)
+            var userResponse = _authService.Authenticate(request.Username, request.Password);
+            if (userResponse == null)
                 return Unauthorized();
 
-            return Ok(new { Token = token });
+            return Ok(userResponse);
         }
 
         [HttpPost]
@@ -38,11 +37,11 @@ namespace WebApplication1.Controllers
             if (request == null || string.IsNullOrEmpty(request.Username) || string.IsNullOrEmpty(request.Token))
                 return BadRequest("Invalid request data.");
 
-            var token = _authService.AuthenticateWith2FA(request.Username, request.Token);
-            if (token == null)
+            var userResponse = _authService.AuthenticateWith2FA(request.Username, request.Token);
+            if (userResponse == null)
                 return Unauthorized();
 
-            return Ok(new { Token = token });
+            return Ok(userResponse);
         }
     }
 }

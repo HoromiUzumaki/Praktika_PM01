@@ -11,27 +11,27 @@ namespace WebApplication1.Controllers
 {
     public class ProductsController : ApiController
     {
-        private WarehouseManagementEntities db = new WarehouseManagementEntities();
+        private СкладыEntities db = new СкладыEntities();
        
         // GET: api/товары
         [ResponseType(typeof(List<Response_Products>))]
 
         public IHttpActionResult GetGoods()
         {
-            return Ok(db.Products.ToList().ConvertAll(p => new Response_Products(p)));
+            return Ok(db.Товары.ToList().ConvertAll(p => new Response_Products(p)));
         }
 
         [ResponseType(typeof(List<Response_Products>))]
-        public IHttpActionResult PostGoods([FromBody] Products товар)
+        public IHttpActionResult PostGoods([FromBody] Товары товар)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            db.Products.Add(товар);
+            db.Товары.Add(товар);
             db.SaveChanges();
             var response = new Response_Products(товар);
-            return CreatedAtRoute("DefaultApi", new { id = товар.ProductID }, response);
+            return CreatedAtRoute("DefaultApi", new { id = товар.IDТовара }, response);
         }
     }
 }

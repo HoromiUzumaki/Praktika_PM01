@@ -7,19 +7,26 @@ namespace WebApplication1.Models
 {
     public class Response_Warehouse
     {
-        public Response_Warehouse(Warehouses склады)
+        public Response_Warehouse(Склады склады)
         {
-            WarehouseID = склады.WarehouseID;
-            Name = склады.Name;
-            Address = склады.Address;
-            Type = склады.Type;
-         
+            IDСклада = склады.IDСклада;
+            Название = склады.Название;
+            Адрес = склады.Адрес;
+            ТипСклада = склады.ТипСклада;
+            ЗонаХранения = склады.ЗонаХранения;
+            IDТовара = склады.IDТовара;
+            Количество = склады.Количество;
+           
+
 
 
         }
-        public int WarehouseID { get; set; }
-        public string Name { get; set; }
-        public string Address { get; set; }
-        public string Type { get; set; }
+        public int IDСклада { get; set; }
+        public string Название { get; set; }
+        public string Адрес { get; set; }
+        public string ТипСклада { get; set; }
+        public string ЗонаХранения { get; set; }
+        public Nullable<int> IDТовара { get; set; }
+        public Nullable<int> Количество { get; set; }
     }
 }
