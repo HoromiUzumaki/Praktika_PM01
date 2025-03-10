@@ -12,16 +12,14 @@ namespace WarehouseLibrary
     using System;
     using System.Collections.Generic;
     
-    public partial class Stock
+    public partial class Склады
     {
-        public int StockID { get; set; }
-        public int ProductID { get; set; }
-        public int WarehouseID { get; set; }
-        public Nullable<int> ZoneID { get; set; }
-        public int Quantity { get; set; }
-    
-        public virtual Products Products { get; set; }
-        public virtual Warehouses Warehouses { get; set; }
-        public virtual StorageZones StorageZones { get; set; }
+        public int IDСклада { get; set; }
+        public string Название { get; set; }
+        public string Адрес { get; set; }
+        public string ТипСклада { get; set; }
+        public string ЗонаХранения { get; set; }
+        public Nullable<int> IDТовара { get; set; }
+        public Nullable<int> Количество { get; set; }
     }
 }

@@ -1,81 +1,79 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WarehouseLibrary
 {
-    public class Class1
+    public class WarehouseManager
     {
-        private readonly WarehouseManagementEntities1 _context;
+        private readonly СкладыEntities _context;
 
-        public Class1()
+        public WarehouseManager()
         {
-            _context = new WarehouseManagementEntities1();
+            _context = new СкладыEntities();
         }
 
-        // Метод 1: Подсчет общего количества товаров на всех складах
-        public int CalculateTotalQuantity()
+        // Метод 1: Подсчет общего количества товара на всех складах (один товар на всех складах)
+        public int CalculateTotalQuantityForProduct(int productID)
         {
-            return _context.Stock.Sum(s => s.Quantity);
+            return _context.Склады
+                .Where(s => s.IDТовара == productID)
+                .Sum(s => s.Количество ?? 0);
         }
 
-        // Перегрузка метода 1: Подсчет количества товаров на конкретном складе
-        public int CalculateTotalQuantity(int warehouseID)
+        // Метод 2: Подсчет количества товара на конкретном складе
+        public int CalculateQuantityForProductInWarehouse(int productID, int warehouseID)
         {
-            return _context.Stock
-                .Where(s => s.WarehouseID == warehouseID)
-                .Sum(s => s.Quantity);
+            return _context.Склады
+                .Where(s => s.IDТовара == productID && s.IDСклада == warehouseID)
+                .Sum(s => s.Количество ?? 0);
         }
 
-        // Метод 2: Подсчет общей стоимости товаров на всех складах
-        public decimal CalculateTotalValue()
+        // Метод 3: Подсчет суммы стоимости товаров на всех складах
+        public decimal CalculateTotalValueForProduct(int productID)
         {
-            return _context.Stock
-                .Join(_context.Products,
-                    stock => stock.ProductID,
-                    product => product.ProductID,
-                    (stock, product) => new { stock.Quantity, product.Price })
-                .Sum(x => x.Quantity * x.Price);
+            var product = _context.Товары.FirstOrDefault(p => p.IDТовара == productID);
+            if (product == null)
+                return 0;
+
+            int totalQuantity = CalculateTotalQuantityForProduct(productID);
+            return totalQuantity * product.Цена;
         }
 
-        // Перегрузка метода 2: Подсчет стоимости товаров на конкретном складе
-        public decimal CalculateTotalValue(int warehouseID)
+        // Метод 4: Подсчет суммы стоимости товаров на конкретном складе
+        public decimal CalculateValueForProductInWarehouse(int productID, int warehouseID)
         {
-            return _context.Stock
-                .Where(s => s.WarehouseID == warehouseID)
-                .Join(_context.Products,
-                    stock => stock.ProductID,
-                    product => product.ProductID,
-                    (stock, product) => new { stock.Quantity, product.Price })
-                .Sum(x => x.Quantity * x.Price);
+            var product = _context.Товары.FirstOrDefault(p => p.IDТовара == productID);
+            if (product == null)
+                return 0;
+
+            int quantity = CalculateQuantityForProductInWarehouse(productID, warehouseID);
+            return quantity * product.Цена;
         }
 
-        // Метод 3: Подсчет количества товаров по категориям на всех складах
+        // Метод 5: Подсчет количества товаров по категориям на всех складах
         public Dictionary<string, int> CalculateQuantityByCategory()
         {
-            return _context.Stock
-                .Join(_context.Products,
-                    stock => stock.ProductID,
-                    product => product.ProductID,
-                    (stock, product) => new { product.Category, stock.Quantity })
-                .GroupBy(x => x.Category)
-                .ToDictionary(g => g.Key, g => g.Sum(x => x.Quantity));
+            return _context.Склады
+                .Join(_context.Товары,
+                    stock => stock.IDТовара,
+                    product => product.IDТовара,
+                    (stock, product) => new { product.Категория, stock.Количество })
+                .GroupBy(x => x.Категория)
+                .ToDictionary(g => g.Key, g => g.Sum(x => x.Количество ?? 0));
         }
 
-        // Перегрузка метода 3: Подсчет количества товаров по категориям на конкретном складе
-        public Dictionary<string, int> CalculateQuantityByCategory(int warehouseID)
+        // Метод 6: Подсчет количества товаров по категориям на конкретном складе
+        public Dictionary<string, int> CalculateQuantityByCategoryInWarehouse(int warehouseID)
         {
-            return _context.Stock
-                .Where(s => s.WarehouseID == warehouseID)
-                .Join(_context.Products,
-                    stock => stock.ProductID,
-                    product => product.ProductID,
-                    (stock, product) => new { product.Category, stock.Quantity })
-                .GroupBy(x => x.Category)
-                .ToDictionary(g => g.Key, g => g.Sum(x => x.Quantity));
+            return _context.Склады
+                .Where(s => s.IDСклада == warehouseID)
+                .Join(_context.Товары,
+                    stock => stock.IDТовара,
+                    product => product.IDТовара,
+                    (stock, product) => new { product.Категория, stock.Количество })
+                .GroupBy(x => x.Категория)
+                .ToDictionary(g => g.Key, g => g.Sum(x => x.Количество ?? 0));
         }
     }
 }
-

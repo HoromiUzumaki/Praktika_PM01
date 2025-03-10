@@ -12,15 +12,15 @@ namespace WarehouseLibrary
     using System;
     using System.Collections.Generic;
     
-    public partial class OutgoingInvoiceItems
+    public partial class ЭлементыЗаказа
     {
-        public int ItemID { get; set; }
-        public int InvoiceID { get; set; }
-        public int ProductID { get; set; }
-        public int Quantity { get; set; }
-        public decimal Price { get; set; }
+        public int IDЭлементаЗаказа { get; set; }
+        public int IDЗаказа { get; set; }
+        public int IDТовара { get; set; }
+        public int Количество { get; set; }
+        public decimal Цена { get; set; }
     
-        public virtual OutgoingInvoices OutgoingInvoices { get; set; }
-        public virtual Products Products { get; set; }
+        public virtual Заказы Заказы { get; set; }
+        public virtual Товары Товары { get; set; }
     }
 }

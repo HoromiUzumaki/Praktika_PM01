@@ -12,14 +12,13 @@ namespace WarehouseLibrary
     using System;
     using System.Collections.Generic;
     
-    public partial class Reports
+    public partial class Пользователи
     {
-        public int ReportID { get; set; }
-        public string ReportType { get; set; }
-        public int GeneratedBy { get; set; }
-        public System.DateTime GeneratedDate { get; set; }
-        public string ReportData { get; set; }
-    
-        public virtual Users Users { get; set; }
+        public int IDПользователя { get; set; }
+        public string ИмяПользователя { get; set; }
+        public string Email { get; set; }
+        public string ХэшПароля { get; set; }
+        public string Роль { get; set; }
+        public byte[] Фото { get; set; }
     }
 }

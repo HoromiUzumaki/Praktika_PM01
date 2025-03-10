@@ -12,21 +12,26 @@ namespace WarehouseLibrary
     using System;
     using System.Collections.Generic;
     
-    public partial class StorageZones
+    public partial class Поставщики
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public StorageZones()
+        public Поставщики()
         {
-            this.Stock = new HashSet<Stock>();
+            this.Заказы = new HashSet<Заказы>();
+            this.ПриходныеНакладные = new HashSet<ПриходныеНакладные>();
         }
     
-        public int ZoneID { get; set; }
-        public int WarehouseID { get; set; }
-        public string ZoneName { get; set; }
-        public string Description { get; set; }
+        public int IDПоставщика { get; set; }
+        public string Название { get; set; }
+        public string ИНН { get; set; }
+        public string КПП { get; set; }
+        public string КонтактныйТелефон { get; set; }
+        public string КонтактныйEmail { get; set; }
+        public string Адрес { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Stock> Stock { get; set; }
-        public virtual Warehouses Warehouses { get; set; }
+        public virtual ICollection<Заказы> Заказы { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ПриходныеНакладные> ПриходныеНакладные { get; set; }
     }
 }

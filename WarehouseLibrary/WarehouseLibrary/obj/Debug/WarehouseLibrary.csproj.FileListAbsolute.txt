@@ -11,3 +11,16 @@ C:\Users\Хороми\Desktop\учебная практика\WarehouseLibrary\W
 C:\Users\Хороми\Desktop\учебная практика\WarehouseLibrary\WarehouseLibrary\obj\Debug\Warehous.AD617E32.Up2Date
 C:\Users\Хороми\Desktop\учебная практика\WarehouseLibrary\WarehouseLibrary\obj\Debug\WarehouseLibrary.dll
 C:\Users\Хороми\Desktop\учебная практика\WarehouseLibrary\WarehouseLibrary\obj\Debug\WarehouseLibrary.pdb
+C:\Users\Хороми\Documents\GitHub\Praktika_PM01\WarehouseLibrary\WarehouseLibrary\bin\Debug\WarehouseLibrary.dll.config
+C:\Users\Хороми\Documents\GitHub\Praktika_PM01\WarehouseLibrary\WarehouseLibrary\bin\Debug\WarehouseLibrary.dll
+C:\Users\Хороми\Documents\GitHub\Praktika_PM01\WarehouseLibrary\WarehouseLibrary\bin\Debug\WarehouseLibrary.pdb
+C:\Users\Хороми\Documents\GitHub\Praktika_PM01\WarehouseLibrary\WarehouseLibrary\bin\Debug\EntityFramework.dll
+C:\Users\Хороми\Documents\GitHub\Praktika_PM01\WarehouseLibrary\WarehouseLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Хороми\Documents\GitHub\Praktika_PM01\WarehouseLibrary\WarehouseLibrary\bin\Debug\EntityFramework.xml
+C:\Users\Хороми\Documents\GitHub\Praktika_PM01\WarehouseLibrary\WarehouseLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Хороми\Documents\GitHub\Praktika_PM01\WarehouseLibrary\WarehouseLibrary\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Хороми\Documents\GitHub\Praktika_PM01\WarehouseLibrary\WarehouseLibrary\obj\Debug\WarehouseLibrary.csproj.AssemblyReference.cache
+C:\Users\Хороми\Documents\GitHub\Praktika_PM01\WarehouseLibrary\WarehouseLibrary\obj\Debug\WarehouseLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Хороми\Documents\GitHub\Praktika_PM01\WarehouseLibrary\WarehouseLibrary\obj\Debug\Warehous.AD617E32.Up2Date
+C:\Users\Хороми\Documents\GitHub\Praktika_PM01\WarehouseLibrary\WarehouseLibrary\obj\Debug\WarehouseLibrary.dll
+C:\Users\Хороми\Documents\GitHub\Praktika_PM01\WarehouseLibrary\WarehouseLibrary\obj\Debug\WarehouseLibrary.pdb

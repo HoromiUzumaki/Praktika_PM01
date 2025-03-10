@@ -12,22 +12,24 @@ namespace WarehouseLibrary
     using System;
     using System.Collections.Generic;
     
-    public partial class OutgoingInvoices
+    public partial class Клиенты
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public OutgoingInvoices()
+        public Клиенты()
         {
-            this.OutgoingInvoiceItems = new HashSet<OutgoingInvoiceItems>();
+            this.Заказы = new HashSet<Заказы>();
+            this.РасходныеНакладные = new HashSet<РасходныеНакладные>();
         }
     
-        public int InvoiceID { get; set; }
-        public string InvoiceNumber { get; set; }
-        public System.DateTime DateShipped { get; set; }
-        public int ClientID { get; set; }
-        public decimal TotalAmount { get; set; }
+        public int IDКлиента { get; set; }
+        public string Название { get; set; }
+        public string КонтактныйТелефон { get; set; }
+        public string КонтактныйEmail { get; set; }
+        public string Адрес { get; set; }
     
-        public virtual Clients Clients { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OutgoingInvoiceItems> OutgoingInvoiceItems { get; set; }
+        public virtual ICollection<Заказы> Заказы { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<РасходныеНакладные> РасходныеНакладные { get; set; }
     }
 }

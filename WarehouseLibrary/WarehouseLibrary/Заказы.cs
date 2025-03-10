@@ -12,23 +12,28 @@ namespace WarehouseLibrary
     using System;
     using System.Collections.Generic;
     
-    public partial class Warehouses
+    public partial class Заказы
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Warehouses()
+        public Заказы()
         {
-            this.Stock = new HashSet<Stock>();
-            this.StorageZones = new HashSet<StorageZones>();
+            this.РезервыТоваров = new HashSet<РезервыТоваров>();
+            this.ЭлементыЗаказа = new HashSet<ЭлементыЗаказа>();
         }
     
-        public int WarehouseID { get; set; }
-        public string Name { get; set; }
-        public string Address { get; set; }
-        public string Type { get; set; }
+        public int IDЗаказа { get; set; }
+        public string ТипЗаказа { get; set; }
+        public System.DateTime ДатаЗаказа { get; set; }
+        public Nullable<int> IDПоставщика { get; set; }
+        public Nullable<int> IDКлиента { get; set; }
+        public string СтатусЗаказа { get; set; }
+        public decimal ОбщаяСумма { get; set; }
     
+        public virtual Клиенты Клиенты { get; set; }
+        public virtual Поставщики Поставщики { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Stock> Stock { get; set; }
+        public virtual ICollection<РезервыТоваров> РезервыТоваров { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<StorageZones> StorageZones { get; set; }
+        public virtual ICollection<ЭлементыЗаказа> ЭлементыЗаказа { get; set; }
     }
 }

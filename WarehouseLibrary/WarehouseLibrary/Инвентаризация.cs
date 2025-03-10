@@ -12,20 +12,20 @@ namespace WarehouseLibrary
     using System;
     using System.Collections.Generic;
     
-    public partial class Inventory
+    public partial class Инвентаризация
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Inventory()
+        public Инвентаризация()
         {
-            this.InventoryResults = new HashSet<InventoryResults>();
+            this.ЭлементыИнвентаризации = new HashSet<ЭлементыИнвентаризации>();
         }
     
-        public int InventoryID { get; set; }
-        public System.DateTime InventoryDate { get; set; }
-        public string ResponsiblePerson { get; set; }
-        public string Notes { get; set; }
+        public int IDИнвентаризации { get; set; }
+        public System.DateTime ДатаИнвентаризации { get; set; }
+        public string ОтветственноеЛицо { get; set; }
+        public string Результаты { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<InventoryResults> InventoryResults { get; set; }
+        public virtual ICollection<ЭлементыИнвентаризации> ЭлементыИнвентаризации { get; set; }
     }
 }

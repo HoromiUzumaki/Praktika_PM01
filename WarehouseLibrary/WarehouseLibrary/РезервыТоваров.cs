@@ -12,15 +12,15 @@ namespace WarehouseLibrary
     using System;
     using System.Collections.Generic;
     
-    public partial class Barcodes
+    public partial class РезервыТоваров
     {
-        public int BarcodeID { get; set; }
-        public int ProductID { get; set; }
-        public string BarcodeData { get; set; }
-        public int GeneratedBy { get; set; }
-        public System.DateTime GeneratedDate { get; set; }
+        public int IDРезерва { get; set; }
+        public int IDЗаказа { get; set; }
+        public int IDТовара { get; set; }
+        public int КоличествоРезерва { get; set; }
+        public System.DateTime ДатаРезерва { get; set; }
     
-        public virtual Users Users { get; set; }
-        public virtual Products Products { get; set; }
+        public virtual Заказы Заказы { get; set; }
+        public virtual Товары Товары { get; set; }
     }
 }
