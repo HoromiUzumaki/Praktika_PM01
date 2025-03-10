@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\Documents\\GitHub\\Praktika_PM01\\WebApplication1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{697D4FAC-E899-4078-81DE-E7C26A03DBCC}|WebApplication1\\WebApplication1.csproj|C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\Documents\\GitHub\\Praktika_PM01\\WebApplication1\\webapplication1\\login2farequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{697D4FAC-E899-4078-81DE-E7C26A03DBCC}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\login2farequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{697D4FAC-E899-4078-81DE-E7C26A03DBCC}|WebApplication1\\WebApplication1.csproj|C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\Documents\\GitHub\\Praktika_PM01\\WebApplication1\\webapplication1\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{697D4FAC-E899-4078-81DE-E7C26A03DBCC}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{697D4FAC-E899-4078-81DE-E7C26A03DBCC}|WebApplication1\\WebApplication1.csproj|C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\Documents\\GitHub\\Praktika_PM01\\WebApplication1\\webapplication1\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{697D4FAC-E899-4078-81DE-E7C26A03DBCC}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{697D4FAC-E899-4078-81DE-E7C26A03DBCC}|WebApplication1\\WebApplication1.csproj|C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\Documents\\GitHub\\Praktika_PM01\\WebApplication1\\webapplication1\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{697D4FAC-E899-4078-81DE-E7C26A03DBCC}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{697D4FAC-E899-4078-81DE-E7C26A03DBCC}|WebApplication1\\WebApplication1.csproj|c:\\users\\\u0445\u043E\u0440\u043E\u043C\u0438\\documents\\github\\praktika_pm01\\webapplication1\\webapplication1\\login2farequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{697D4FAC-E899-4078-81DE-E7C26A03DBCC}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\login2farequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{697D4FAC-E899-4078-81DE-E7C26A03DBCC}|WebApplication1\\WebApplication1.csproj|C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\Documents\\GitHub\\Praktika_PM01\\WebApplication1\\webapplication1\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,19 +27,15 @@
       "RelativeMoniker": "D:0:0:{697D4FAC-E899-4078-81DE-E7C26A03DBCC}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\app_start\\unityconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{697D4FAC-E899-4078-81DE-E7C26A03DBCC}|WebApplication1\\WebApplication1.csproj|c:\\users\\\u0445\u043E\u0440\u043E\u043C\u0438\\documents\\github\\praktika_pm01\\webapplication1\\webapplication1\\models\\response_\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u0438.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{697D4FAC-E899-4078-81DE-E7C26A03DBCC}|WebApplication1\\WebApplication1.csproj|C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\Documents\\GitHub\\Praktika_PM01\\WebApplication1\\webapplication1\\models\\response_\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u0438.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{697D4FAC-E899-4078-81DE-E7C26A03DBCC}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\response_\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u0438.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{697D4FAC-E899-4078-81DE-E7C26A03DBCC}|WebApplication1\\WebApplication1.csproj|C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\Documents\\GitHub\\Praktika_PM01\\WebApplication1\\webapplication1\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{697D4FAC-E899-4078-81DE-E7C26A03DBCC}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{697D4FAC-E899-4078-81DE-E7C26A03DBCC}|WebApplication1\\WebApplication1.csproj|C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\Documents\\GitHub\\Praktika_PM01\\WebApplication1\\webapplication1\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{697D4FAC-E899-4078-81DE-E7C26A03DBCC}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{697D4FAC-E899-4078-81DE-E7C26A03DBCC}|WebApplication1\\WebApplication1.csproj|c:\\users\\\u0445\u043E\u0440\u043E\u043C\u0438\\documents\\github\\praktika_pm01\\webapplication1\\webapplication1\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "AbsoluteMoniker": "D:0:0:{697D4FAC-E899-4078-81DE-E7C26A03DBCC}|WebApplication1\\WebApplication1.csproj|C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\Documents\\GitHub\\Praktika_PM01\\WebApplication1\\webapplication1\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
       "RelativeMoniker": "D:0:0:{697D4FAC-E899-4078-81DE-E7C26A03DBCC}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
     }
   ],
@@ -46,11 +46,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 209,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Response_\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u0438.cs",
               "DocumentMoniker": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\Documents\\GitHub\\Praktika_PM01\\WebApplication1\\WebApplication1\\Models\\Response_\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u0438.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\Response_\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u0438.cs",
@@ -58,8 +58,7 @@
               "RelativeToolTip": "WebApplication1\\Models\\Response_\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u0438.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAmwB4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T09:12:18.68Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-10T09:12:18.68Z"
             },
             {
               "$type": "Document",
@@ -70,12 +69,11 @@
               "ToolTip": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\Documents\\GitHub\\Praktika_PM01\\WebApplication1\\WebApplication1\\Model1.edmx [Diagram1]",
               "RelativeToolTip": "WebApplication1\\Model1.edmx [Diagram1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2025-03-10T09:08:20.808Z",
-              "EditorCaption": " [Diagram1]"
+              "WhenOpened": "2025-03-10T09:08:20.808Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Global.asax.cs",
               "DocumentMoniker": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\Documents\\GitHub\\Praktika_PM01\\WebApplication1\\WebApplication1\\Global.asax.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Global.asax.cs",
@@ -83,12 +81,11 @@
               "RelativeToolTip": "WebApplication1\\Global.asax.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAkwA8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-28T15:33:28.42Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-28T15:33:28.42Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "UnityConfig.cs",
               "DocumentMoniker": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\Documents\\GitHub\\Praktika_PM01\\WebApplication1\\WebApplication1\\App_Start\\UnityConfig.cs",
               "RelativeDocumentMoniker": "WebApplication1\\App_Start\\UnityConfig.cs",
@@ -96,12 +93,11 @@
               "RelativeToolTip": "WebApplication1\\App_Start\\UnityConfig.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAkAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-28T15:31:22.977Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-28T15:31:22.977Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Login2FARequest.cs",
               "DocumentMoniker": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\Documents\\GitHub\\Praktika_PM01\\WebApplication1\\WebApplication1\\Login2FARequest.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Login2FARequest.cs",
@@ -114,7 +110,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "LoginRequest.cs",
               "DocumentMoniker": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\Documents\\GitHub\\Praktika_PM01\\WebApplication1\\WebApplication1\\LoginRequest.cs",
               "RelativeDocumentMoniker": "WebApplication1\\LoginRequest.cs",
@@ -127,7 +123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\Documents\\GitHub\\Praktika_PM01\\WebApplication1\\WebApplication1\\IAuthService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\IAuthService.cs",
@@ -140,13 +136,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\Documents\\GitHub\\Praktika_PM01\\WebApplication1\\WebApplication1\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\Documents\\GitHub\\Praktika_PM01\\WebApplication1\\WebApplication1\\Controllers\\AuthController.cs",
               "RelativeToolTip": "WebApplication1\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAA1wCEAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowCEAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-28T14:36:11.428Z",
               "EditorCaption": ""
@@ -161,8 +157,7 @@
               "RelativeToolTip": "WebApplication1\\App_Start\\WebApiConfig.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-28T14:06:59.528Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-28T14:06:59.528Z"
             }
           ]
         },
