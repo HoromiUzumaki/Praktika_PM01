@@ -18,7 +18,9 @@ namespace WarehouseLibrary
         {
             return _context.Склады
                 .Where(s => s.IDТовара == productID)
-                .Sum(s => s.Количество ?? 0);
+                .Select(s => s.Количество ?? 0)
+                .DefaultIfEmpty(0)
+                .Sum();
         }
 
         // Метод 2: Подсчет количества товара на конкретном складе
@@ -26,7 +28,9 @@ namespace WarehouseLibrary
         {
             return _context.Склады
                 .Where(s => s.IDТовара == productID && s.IDСклада == warehouseID)
-                .Sum(s => s.Количество ?? 0);
+                .Select(s => s.Количество ?? 0)
+                .DefaultIfEmpty(0)
+                .Sum();
         }
 
         // Метод 3: Подсчет суммы стоимости товаров на всех складах
