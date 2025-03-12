@@ -7,7 +7,7 @@
         mc:Ignorable="d"
            Title="Окно авторизации" Height="400" Width="550" Background=" #99FF99">
     <Grid>
-        <Label Content="Введите вашу роль в системе:" HorizontalAlignment="Left" Margin="50,106,0,0" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontSize="24"/>
+        <Label Content="Введите ваш 2FA токен:" HorizontalAlignment="Left" Margin="50,106,0,0" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontSize="24"/>
         <TextBox x:Name="SecretWord" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="450" Height="30"/>
         <Button x:Name="Author" Style="{StaticResource ModernButtonTheme}" Content="Вход" HorizontalAlignment="Center" Margin="0,295,0,0" VerticalAlignment="Top"  FontSize="36" Width="450" Click="Author_Click"/>
 

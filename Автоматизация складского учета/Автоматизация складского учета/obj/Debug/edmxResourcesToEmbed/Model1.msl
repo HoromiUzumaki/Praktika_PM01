@@ -25,6 +25,7 @@
     <EntitySetMapping Name="Пользователи">
       <EntityTypeMapping TypeName="СкладыModel.Пользователи">
         <MappingFragment StoreEntitySet="Пользователи">
+          <ScalarProperty Name="TwoFactorToken" ColumnName="TwoFactorToken" />
           <ScalarProperty Name="Фото" ColumnName="Фото" />
           <ScalarProperty Name="IDПользователя" ColumnName="IDПользователя" />
           <ScalarProperty Name="ИмяПользователя" ColumnName="ИмяПользователя" />

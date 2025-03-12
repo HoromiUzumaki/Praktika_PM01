@@ -20,5 +20,6 @@ namespace Автоматизация_складского_учета
         public string ХэшПароля { get; set; }
         public string Роль { get; set; }
         public byte[] Фото { get; set; }
+        public string TwoFactorToken { get; set; }
     }
 }

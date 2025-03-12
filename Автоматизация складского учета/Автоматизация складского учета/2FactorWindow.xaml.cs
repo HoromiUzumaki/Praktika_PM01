@@ -22,10 +22,10 @@ namespace Автоматизация_складского_учета
         {
             if (string.IsNullOrEmpty(SecretWord.Text))
             {
-                MessageBox.Show("Введите правильное наименование роли.");
+                MessageBox.Show("Введите правильный токен.");
                 return;
             }
-            if (SecretWord.Text == _user.Роль) 
+            if (SecretWord.Text == _user.TwoFactorToken) 
             {
                 MessageBox.Show("Успешная авторизация!");
                 OpenRoleSpecificWindow(_user.Роль);
@@ -33,7 +33,7 @@ namespace Автоматизация_складского_учета
             }
             else
             {
-                MessageBox.Show("Неверное наименование роли.");
+                MessageBox.Show("Неверный токен.");
             }
         }
 
