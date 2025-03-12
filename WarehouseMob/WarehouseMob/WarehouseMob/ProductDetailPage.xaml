@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WarehouseMob.ProductDetailPage">
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+            <Entry Placeholder="Название*" x:Name="entryName"/>
+            <Entry Placeholder="Артикул*" x:Name="entryArticle"/>
+            <Entry Placeholder="Категория" x:Name="entryCategory"/>
+            <Entry Placeholder="Цена*" x:Name="entryPrice" Keyboard="Numeric"/>
+            <Entry Placeholder="Штрих-код*" x:Name="entryBarcode" Keyboard="Numeric"/>
+            <Entry Placeholder="Ед. измерения" x:Name="entryUnit"/>
+            <Entry Placeholder="Серийный номер" x:Name="entrySerial"/>
+            <Entry Placeholder="Мин. запас" x:Name="entryMinStock" Keyboard="Numeric"/>
+
+            <Button Text="Сохранить"
+                    Clicked="OnSaveClicked"
+                    BackgroundColor="#2196F3"
+                    TextColor="White"
+                    CornerRadius="10"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

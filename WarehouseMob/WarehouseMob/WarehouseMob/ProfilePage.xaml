@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms" 
+             xmlns:zxingCommon="clr-namespace:ZXing.Common;assembly=zxing.portable"
+             x:Class="WarehouseMob.ProfilePage"
+             Padding="0,40,0,0">
+    <!-- Добавьте отступ сверху для панели навигации -->
+    <ContentPage.Content>
+        <!-- Добавляем ScrollView для прокрутки -->
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="10">
+
+                <!-- Фотография пользователя -->
+                <Image x:Name="UserImage" 
+                       HeightRequest="100" 
+                       WidthRequest="100" 
+                       Aspect="AspectFill"
+                       HorizontalOptions="Center">
+                    <Image.Source>
+                        <FileImageSource File="{Binding Фото}" />
+                    </Image.Source>
+                </Image>
+
+                <!-- Кнопка для изменения фотографии -->
+                <Button Text="Изменить фото" 
+                        Clicked="OnChangePhotoClicked" 
+                        HorizontalOptions="Center" />
+
+                <!-- Текущий пользователь -->
+                <Label Text="{Binding ИмяПользователя}" 
+                       FontSize="Large" 
+                       HorizontalOptions="Center" />
+
+                <!-- Поле для изменения почты -->
+                <Entry Placeholder="Новая почта" 
+                       Text="{Binding Email}" />
+
+                <!-- Поле для изменения пароля -->
+                <Entry Placeholder="Новый пароль" 
+                       IsPassword="True"/>
+
+                <!-- Кнопка для сохранения изменений -->
+                <Button Text="Сохранить изменения" 
+                        Clicked="OnSaveChangesClicked" 
+                        BackgroundColor="#2196F3" 
+                        TextColor="White" />
+
+                <!-- Генерация QR-кода -->
+                <Button Text="Сгенерировать QR-код" 
+                        Clicked="OnGenerateQRClicked" 
+                        BackgroundColor="#4CAF50" 
+                        TextColor="White" />
+
+                <!-- Отображение QR-кода с использованием ZXingBarcodeImageView -->
+                <zxing:ZXingBarcodeImageView x:Name="QRCodeImage"
+                                              HeightRequest="200"
+                                              WidthRequest="200"
+                                              HorizontalOptions="Center"
+                                              BarcodeFormat="QR_CODE"
+                                              BarcodeValue="Нажмите 'Сгенерировать QR-код'">
+                    <zxing:ZXingBarcodeImageView.BarcodeOptions>
+                        <zxingCommon:EncodingOptions Width="300" Height="300" Margin="1" />
+                    </zxing:ZXingBarcodeImageView.BarcodeOptions>
+                </zxing:ZXingBarcodeImageView>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

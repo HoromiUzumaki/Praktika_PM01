@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             x:Class="WarehouseMob.BarcodeScanPage">
+
+    <ScrollView>
+        <StackLayout>
+            <!-- Сканер штрих-кодов -->
+            <zxing:ZXingScannerView x:Name="scannerView"
+                                    OnScanResult="Handle_OnScanResult"
+                                    IsScanning="True"
+                                    IsAnalyzing="True"
+                                    VerticalOptions="FillAndExpand"
+                                    HorizontalOptions="FillAndExpand"
+                                    HeightRequest="300"/>
+
+            <!-- Результат сканирования -->
+            <Label x:Name="resultLabel"
+                   Text="Наведите камеру на штрих-код"
+                   HorizontalOptions="Center"
+                   VerticalOptions="End"
+                   Margin="20"
+                   FontSize="Medium"/>
+
+            <!-- Кнопка для ручного ввода -->
+            <Button Text="Ввести штрих-код вручную"
+                    Clicked="OnManualInputClicked"
+                    Margin="20"
+                    HorizontalOptions="Center"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

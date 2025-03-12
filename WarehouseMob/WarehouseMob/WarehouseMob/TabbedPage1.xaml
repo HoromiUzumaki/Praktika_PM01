@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:WarehouseMob"
+            x:Class="WarehouseMob.TabbedPage1">
+
+    <NavigationPage IconImageSource="ecommerce_home_market_mart_shop_shopping_store_icon_123207.png">
+        <x:Arguments>
+            <local:WarehousePage />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage IconImageSource="direction_gps_location_map_maps_navigation_pin_icon_123198.png">
+        <x:Arguments>
+            <local:WarehouseMapPage />
+        </x:Arguments>
+    </NavigationPage>
+
+    <NavigationPage IconImageSource="bag_buy_cart_ecommerce_shop_shopping_store_icon_123227.png">
+        <x:Arguments>
+            <local:ProductsPage />
+        </x:Arguments>
+    </NavigationPage>
+
+    <NavigationPage IconImageSource="barcode_scan_icon_137911.png">
+        <x:Arguments>
+            <local:BarcodeScanPage />
+        </x:Arguments>
+    </NavigationPage>
+
+    <NavigationPage IconImageSource="account_avatar_face_man_people_profile_user_icon_123197.png">
+        <x:Arguments>
+            <local:ProfilePage />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage IconImageSource="questionincircularbutton_80033.png">
+        <x:Arguments>
+            <local:HelpPage />
+        </x:Arguments>
+    </NavigationPage>
+</TabbedPage>

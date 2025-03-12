@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WarehouseMob.HelpPage">
+    <ScrollView>
+        <StackLayout Padding="20">
+            <Label Text="Мобильное приложение для кладовщика"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0, 0, 0, 20"/>
+
+            <Label Text="Мобильное приложение предназначено для роли кладовщика, но просмотр данных могут осуществлять и другие роли."
+                   FontSize="16"
+                   TextColor="Black"/>
+
+            <Label Text="Функции мобильного приложения:"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   Margin="0, 20, 0, 10"/>
+
+            <Label Text="1. Двухфакторная аутентификация"
+                   FontSize="16"
+                   TextColor="Black"/>
+
+            <Label Text="2. Реализовано меню со следующими фрагментами:"
+                   FontSize="16"
+                   TextColor="Black"/>
+
+            <Label Text="   а. Список складов и их местоположение"
+                   FontSize="16"
+                   TextColor="Black"
+                   Margin="20, 0, 0, 0"/>
+
+            <Label Text="   б. Список товаров по складам"
+                   FontSize="16"
+                   TextColor="Black"
+                   Margin="20, 0, 0, 0"/>
+
+            <Label Text="   в. Сканирование штрихкода (QR кода) для проверки товара"
+                   FontSize="16"
+                   TextColor="Black"
+                   Margin="20, 0, 0, 0"/>
+
+            <Label Text="   г. Профиль с пропуском"
+                   FontSize="16"
+                   TextColor="Black"
+                   Margin="20, 0, 0, 0"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
