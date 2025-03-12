@@ -15,7 +15,7 @@ namespace WarehouseMob
 
         public DatabaseContext()
         {
-            var databasePath = Path.Combine(FileSystem.AppDataDirectory, "sklad1.db");
+            var databasePath = Path.Combine(FileSystem.AppDataDirectory, "sklad12.db");
             _database = new SQLiteAsyncConnection(databasePath);
 
             // Создаем таблицы
@@ -165,7 +165,8 @@ namespace WarehouseMob
                     ИмяПользователя="Ксения Порошина",
                     Email = "admin@example.com",
                     ХэшПароля = PasswordHelper.HashPassword("admin1234"),
-                    Роль = "Администратор"
+                    Роль = "Администратор",
+                    Токен="123456"
                 },
                 new Пользователи
                 {
@@ -173,7 +174,8 @@ namespace WarehouseMob
                     ИмяПользователя="Михаил Горохов",
                     Email = "storekeeper@example.com",
                     ХэшПароля = PasswordHelper.HashPassword("store1234"),
-                    Роль = "Кладовщик"
+                    Роль = "Кладовщик",
+                     Токен="123457"
                 },
                 new Пользователи
                 {
@@ -181,7 +183,8 @@ namespace WarehouseMob
                      ИмяПользователя="Анастасия Шишкина",
                     Email = "accountant@example.com",
                     ХэшПароля = PasswordHelper.HashPassword("account1234"),
-                    Роль = "Бухгалтер"
+                    Роль = "Бухгалтер",
+                     Токен="122345"
                 },
                 new Пользователи
                 {
@@ -189,7 +192,8 @@ namespace WarehouseMob
                      ИмяПользователя="Денис Иванов",
                     Email = "manager@example.com",
                     ХэшПароля = PasswordHelper.HashPassword("manager1234"),
-                    Роль = "Менеджер по продажам"
+                    Роль = "Менеджер по продажам",
+                     Токен="112236"
                 }
             };
 

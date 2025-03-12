@@ -32,10 +32,10 @@ namespace WarehouseMob
             return пользователь;
         }
 
-        // Второй этап аутентификации: проверка роли
-        public bool VerifyRole(Пользователи пользователь, string роль)
+        // Второй этап аутентификации: проверка токена
+        public bool VerifyToken(Пользователи пользователь, string Токен)
         {
-            return пользователь.Роль.Equals(роль, StringComparison.OrdinalIgnoreCase);
+            return пользователь.Токен.Equals(Токен, StringComparison.OrdinalIgnoreCase);
         }
     }
 }

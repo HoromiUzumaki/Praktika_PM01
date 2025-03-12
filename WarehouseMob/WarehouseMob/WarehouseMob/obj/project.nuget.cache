@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fRfFoNoWEtM=",
+  "dgSpecHash": "g6PEfo2lLzo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Хороми\\source\\repos\\WarehouseMob\\WarehouseMob\\WarehouseMob\\WarehouseMob.csproj",
+  "projectFilePath": "C:\\Users\\Хороми\\Desktop\\WarehouseMob\\WarehouseMob\\WarehouseMob\\WarehouseMob.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Хороми\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Хороми\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

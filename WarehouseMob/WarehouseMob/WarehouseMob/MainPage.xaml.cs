@@ -27,10 +27,10 @@ namespace WarehouseMob
                 // Первый этап: проверка почты и пароля
                 var пользователь = await _authService.AuthenticateAsync(email, password);
 
-                // Второй этап: двухфакторная аутентификация (ввод роли)
-                var роль = await DisplayPromptAsync("Двухфакторная аутентификация", "Введите вашу роль:");
+                // Второй этап: двухфакторная аутентификация (ввод токена)
+                var Токен = await DisplayPromptAsync("Двухфакторная аутентификация", "Введите ваш токен:");
 
-                if (_authService.VerifyRole(пользователь, роль))
+                if (_authService.VerifyToken(пользователь, Токен))
                 {
                     // Успешная аутентификация
                     App.CurrentUser = пользователь;
@@ -39,7 +39,7 @@ namespace WarehouseMob
                 }
                 else
                 {
-                    await DisplayAlert("Ошибка", "Неверная роль.", "OK");
+                    await DisplayAlert("Ошибка", "Неверный токен.", "OK");
                 }
             }
             catch (Exception ex)

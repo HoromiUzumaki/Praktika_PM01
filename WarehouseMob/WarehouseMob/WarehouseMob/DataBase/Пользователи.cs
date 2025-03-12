@@ -13,5 +13,6 @@ namespace WarehouseMob.DataBase
         public string ХэшПароля { get; set; }
         public string Роль { get; set; }
         public string Фото { get; set; }
+        public string Токен { get; set; }
     }
 }

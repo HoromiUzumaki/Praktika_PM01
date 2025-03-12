@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Хороми\\source\\repos\\WarehouseMob\\WarehouseMob\\WarehouseMob.Android\\WarehouseMob.Android.csproj": {}
+    "C:\\Users\\Хороми\\Desktop\\WarehouseMob\\WarehouseMob\\WarehouseMob.Android\\WarehouseMob.Android.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Хороми\\source\\repos\\WarehouseMob\\WarehouseMob\\WarehouseMob.Android\\WarehouseMob.Android.csproj": {
+    "C:\\Users\\Хороми\\Desktop\\WarehouseMob\\WarehouseMob\\WarehouseMob.Android\\WarehouseMob.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Хороми\\source\\repos\\WarehouseMob\\WarehouseMob\\WarehouseMob.Android\\WarehouseMob.Android.csproj",
+        "projectUniqueName": "C:\\Users\\Хороми\\Desktop\\WarehouseMob\\WarehouseMob\\WarehouseMob.Android\\WarehouseMob.Android.csproj",
         "projectName": "WarehouseMob.Android",
-        "projectPath": "C:\\Users\\Хороми\\source\\repos\\WarehouseMob\\WarehouseMob\\WarehouseMob.Android\\WarehouseMob.Android.csproj",
+        "projectPath": "C:\\Users\\Хороми\\Desktop\\WarehouseMob\\WarehouseMob\\WarehouseMob.Android\\WarehouseMob.Android.csproj",
         "packagesPath": "C:\\Users\\Хороми\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Хороми\\source\\repos\\WarehouseMob\\WarehouseMob\\WarehouseMob.Android\\obj\\",
+        "outputPath": "C:\\Users\\Хороми\\Desktop\\WarehouseMob\\WarehouseMob\\WarehouseMob.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid13.0": {
             "projectReferences": {
-              "C:\\Users\\Хороми\\source\\repos\\WarehouseMob\\WarehouseMob\\WarehouseMob\\WarehouseMob.csproj": {
-                "projectPath": "C:\\Users\\Хороми\\source\\repos\\WarehouseMob\\WarehouseMob\\WarehouseMob\\WarehouseMob.csproj"
+              "C:\\Users\\Хороми\\Desktop\\WarehouseMob\\WarehouseMob\\WarehouseMob\\WarehouseMob.csproj": {
+                "projectPath": "C:\\Users\\Хороми\\Desktop\\WarehouseMob\\WarehouseMob\\WarehouseMob\\WarehouseMob.csproj"
               }
             }
           }
@@ -59,14 +59,14 @@
         }
       }
     },
-    "C:\\Users\\Хороми\\source\\repos\\WarehouseMob\\WarehouseMob\\WarehouseMob\\WarehouseMob.csproj": {
+    "C:\\Users\\Хороми\\Desktop\\WarehouseMob\\WarehouseMob\\WarehouseMob\\WarehouseMob.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Хороми\\source\\repos\\WarehouseMob\\WarehouseMob\\WarehouseMob\\WarehouseMob.csproj",
+        "projectUniqueName": "C:\\Users\\Хороми\\Desktop\\WarehouseMob\\WarehouseMob\\WarehouseMob\\WarehouseMob.csproj",
         "projectName": "WarehouseMob",
-        "projectPath": "C:\\Users\\Хороми\\source\\repos\\WarehouseMob\\WarehouseMob\\WarehouseMob\\WarehouseMob.csproj",
+        "projectPath": "C:\\Users\\Хороми\\Desktop\\WarehouseMob\\WarehouseMob\\WarehouseMob\\WarehouseMob.csproj",
         "packagesPath": "C:\\Users\\Хороми\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Хороми\\source\\repos\\WarehouseMob\\WarehouseMob\\WarehouseMob\\obj\\",
+        "outputPath": "C:\\Users\\Хороми\\Desktop\\WarehouseMob\\WarehouseMob\\WarehouseMob\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
