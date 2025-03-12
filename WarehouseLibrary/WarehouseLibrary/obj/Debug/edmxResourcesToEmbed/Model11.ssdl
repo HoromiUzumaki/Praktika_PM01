@@ -51,6 +51,7 @@
     <Property Name="ХэшПароля" Type="nvarchar" MaxLength="255" />
     <Property Name="Роль" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Фото" Type="varbinary(max)" />
+    <Property Name="TwoFactorToken" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Поставщики">
     <Key>
