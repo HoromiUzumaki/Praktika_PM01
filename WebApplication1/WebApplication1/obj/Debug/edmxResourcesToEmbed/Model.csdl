@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WarehouseManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Barcodes">
+    <Key>
+      <PropertyRef Name="BarcodeID" />
+    </Key>
+    <Property Name="BarcodeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="BarcodeData" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GeneratedBy" Type="Int32" Nullable="false" />
+    <Property Name="GeneratedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Barcodes__Genera__5BE2A6F2" FromRole="Barcodes" ToRole="Users" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Barcodes__Produc__5AEE82B9" FromRole="Barcodes" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="ClientID" />
+    </Key>
+    <Property Name="ClientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContactPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="OutgoingInvoices" Relationship="Self.FK__OutgoingI__Clien__3D5E1FD2" FromRole="Clients" ToRole="OutgoingInvoices" />
+  </EntityType>
+  <EntityType Name="Files">
+    <Key>
+      <PropertyRef Name="FileID" />
+    </Key>
+    <Property Name="FileID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FileType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FileData" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="UploadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UploadedBy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Files__UploadedB__4F7CD00D" FromRole="Files" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="IncomingInvoiceItems">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <NavigationProperty Name="IncomingInvoices" Relationship="Self.FK__IncomingI__Invoi__398D8EEE" FromRole="IncomingInvoiceItems" ToRole="IncomingInvoices" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__IncomingI__Produ__3A81B327" FromRole="IncomingInvoiceItems" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="IncomingInvoices">
+    <Key>
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="InvoiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateReceived" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="SupplierID" Type="Int32" Nullable="false" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <NavigationProperty Name="IncomingInvoiceItems" Relationship="Self.FK__IncomingI__Invoi__398D8EEE" FromRole="IncomingInvoices" ToRole="IncomingInvoiceItems" />
+    <NavigationProperty Name="Suppliers" Relationship="Self.FK__IncomingI__Suppl__36B12243" FromRole="IncomingInvoices" ToRole="Suppliers" />
+  </EntityType>
+  <EntityType Name="Inventory">
+    <Key>
+      <PropertyRef Name="InventoryID" />
+    </Key>
+    <Property Name="InventoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InventoryDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ResponsiblePerson" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Notes" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="InventoryResults" Relationship="Self.FK__Inventory__Inven__45F365D3" FromRole="Inventory" ToRole="InventoryResults" />
+  </EntityType>
+  <EntityType Name="InventoryResults">
+    <Key>
+      <PropertyRef Name="ResultID" />
+    </Key>
+    <Property Name="ResultID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InventoryID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="ActualQuantity" Type="Int32" Nullable="false" />
+    <Property Name="RecordedQuantity" Type="Int32" Nullable="false" />
+    <Property Name="Difference" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Inventory" Relationship="Self.FK__Inventory__Inven__45F365D3" FromRole="InventoryResults" ToRole="Inventory" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Inventory__Produ__46E78A0C" FromRole="InventoryResults" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="OutgoingInvoiceItems">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <NavigationProperty Name="OutgoingInvoices" Relationship="Self.FK__OutgoingI__Invoi__403A8C7D" FromRole="OutgoingInvoiceItems" ToRole="OutgoingInvoices" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__OutgoingI__Produ__412EB0B6" FromRole="OutgoingInvoiceItems" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="OutgoingInvoices">
+    <Key>
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="InvoiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateShipped" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ClientID" Type="Int32" Nullable="false" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Clients" Relationship="Self.FK__OutgoingI__Clien__3D5E1FD2" FromRole="OutgoingInvoices" ToRole="Clients" />
+    <NavigationProperty Name="OutgoingInvoiceItems" Relationship="Self.FK__OutgoingI__Invoi__403A8C7D" FromRole="OutgoingInvoices" ToRole="OutgoingInvoiceItems" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Article" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Barcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Category" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UnitOfMeasurement" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ExpiryDate" Type="DateTime" Precision="0" />
+    <Property Name="SerialNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MinimumStockLevel" Type="Int32" />
+    <NavigationProperty Name="Barcodes" Relationship="Self.FK__Barcodes__Produc__5AEE82B9" FromRole="Products" ToRole="Barcodes" />
+    <NavigationProperty Name="IncomingInvoiceItems" Relationship="Self.FK__IncomingI__Produ__3A81B327" FromRole="Products" ToRole="IncomingInvoiceItems" />
+    <NavigationProperty Name="InventoryResults" Relationship="Self.FK__Inventory__Produ__46E78A0C" FromRole="Products" ToRole="InventoryResults" />
+    <NavigationProperty Name="OutgoingInvoiceItems" Relationship="Self.FK__OutgoingI__Produ__412EB0B6" FromRole="Products" ToRole="OutgoingInvoiceItems" />
+    <NavigationProperty Name="Stock" Relationship="Self.FK__Stock__ProductID__49C3F6B7" FromRole="Products" ToRole="Stock" />
+  </EntityType>
+  <EntityType Name="Reports">
+    <Key>
+      <PropertyRef Name="ReportID" />
+    </Key>
+    <Property Name="ReportID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReportType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GeneratedBy" Type="Int32" Nullable="false" />
+    <Property Name="GeneratedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ReportData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Reports__Generat__571DF1D5" FromRole="Reports" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Users__RoleID__286302EC" FromRole="Roles" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Stock">
+    <Key>
+      <PropertyRef Name="StockID" />
+    </Key>
+    <Property Name="StockID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="WarehouseID" Type="Int32" Nullable="false" />
+    <Property Name="ZoneID" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Stock__ProductID__49C3F6B7" FromRole="Stock" ToRole="Products" />
+    <NavigationProperty Name="Warehouses" Relationship="Self.FK__Stock__Warehouse__4AB81AF0" FromRole="Stock" ToRole="Warehouses" />
+    <NavigationProperty Name="StorageZones" Relationship="Self.FK__Stock__ZoneID__4BAC3F29" FromRole="Stock" ToRole="StorageZones" />
+  </EntityType>
+  <EntityType Name="StorageZones">
+    <Key>
+      <PropertyRef Name="ZoneID" />
+    </Key>
+    <Property Name="ZoneID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WarehouseID" Type="Int32" Nullable="false" />
+    <Property Name="ZoneName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Stock" Relationship="Self.FK__Stock__ZoneID__4BAC3F29" FromRole="StorageZones" ToRole="Stock" />
+    <NavigationProperty Name="Warehouses" Relationship="Self.FK__StorageZo__Wareh__300424B4" FromRole="StorageZones" ToRole="Warehouses" />
+  </EntityType>
+  <EntityType Name="Suppliers">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="INN" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="KPP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ContactPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="IncomingInvoices" Relationship="Self.FK__IncomingI__Suppl__36B12243" FromRole="Suppliers" ToRole="IncomingInvoices" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="UserLogs">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="Action" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Timestamp" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__UserLogs__UserID__534D60F1" FromRole="UserLogs" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FullName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="TwoFactorSecret" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Barcodes" Relationship="Self.FK__Barcodes__Genera__5BE2A6F2" FromRole="Users" ToRole="Barcodes" />
+    <NavigationProperty Name="Files" Relationship="Self.FK__Files__UploadedB__4F7CD00D" FromRole="Users" ToRole="Files" />
+    <NavigationProperty Name="Reports" Relationship="Self.FK__Reports__Generat__571DF1D5" FromRole="Users" ToRole="Reports" />
+    <NavigationProperty Name="Roles" Relationship="Self.FK__Users__RoleID__286302EC" FromRole="Users" ToRole="Roles" />
+    <NavigationProperty Name="UserLogs" Relationship="Self.FK__UserLogs__UserID__534D60F1" FromRole="Users" ToRole="UserLogs" />
+  </EntityType>
+  <EntityType Name="Warehouses">
+    <Key>
+      <PropertyRef Name="WarehouseID" />
+    </Key>
+    <Property Name="WarehouseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Stock" Relationship="Self.FK__Stock__Warehouse__4AB81AF0" FromRole="Warehouses" ToRole="Stock" />
+    <NavigationProperty Name="StorageZones" Relationship="Self.FK__StorageZo__Wareh__300424B4" FromRole="Warehouses" ToRole="StorageZones" />
+  </EntityType>
+  <Association Name="FK__Barcodes__Genera__5BE2A6F2">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Barcodes" Type="Self.Barcodes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Barcodes">
+        <PropertyRef Name="GeneratedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Barcodes__Produc__5AEE82B9">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Barcodes" Type="Self.Barcodes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Barcodes">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OutgoingI__Clien__3D5E1FD2">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+    <End Role="OutgoingInvoices" Type="Self.OutgoingInvoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="OutgoingInvoices">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Files__UploadedB__4F7CD00D">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Files" Type="Self.Files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Files">
+        <PropertyRef Name="UploadedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__IncomingI__Invoi__398D8EEE">
+    <End Role="IncomingInvoices" Type="Self.IncomingInvoices" Multiplicity="1" />
+    <End Role="IncomingInvoiceItems" Type="Self.IncomingInvoiceItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IncomingInvoices">
+        <PropertyRef Name="InvoiceID" />
+      </Principal>
+      <Dependent Role="IncomingInvoiceItems">
+        <PropertyRef Name="InvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__IncomingI__Produ__3A81B327">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="IncomingInvoiceItems" Type="Self.IncomingInvoiceItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="IncomingInvoiceItems">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__IncomingI__Suppl__36B12243">
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
+    <End Role="IncomingInvoices" Type="Self.IncomingInvoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="IncomingInvoices">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Inventory__Inven__45F365D3">
+    <End Role="Inventory" Type="Self.Inventory" Multiplicity="1" />
+    <End Role="InventoryResults" Type="Self.InventoryResults" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory">
+        <PropertyRef Name="InventoryID" />
+      </Principal>
+      <Dependent Role="InventoryResults">
+        <PropertyRef Name="InventoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Inventory__Produ__46E78A0C">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="InventoryResults" Type="Self.InventoryResults" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="InventoryResults">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OutgoingI__Invoi__403A8C7D">
+    <End Role="OutgoingInvoices" Type="Self.OutgoingInvoices" Multiplicity="1" />
+    <End Role="OutgoingInvoiceItems" Type="Self.OutgoingInvoiceItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OutgoingInvoices">
+        <PropertyRef Name="InvoiceID" />
+      </Principal>
+      <Dependent Role="OutgoingInvoiceItems">
+        <PropertyRef Name="InvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OutgoingI__Produ__412EB0B6">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="OutgoingInvoiceItems" Type="Self.OutgoingInvoiceItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="OutgoingInvoiceItems">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Stock__ProductID__49C3F6B7">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Stock" Type="Self.Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reports__Generat__571DF1D5">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Reports" Type="Self.Reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Reports">
+        <PropertyRef Name="GeneratedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Users__RoleID__286302EC">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Stock__Warehouse__4AB81AF0">
+    <End Role="Warehouses" Type="Self.Warehouses" Multiplicity="1" />
+    <End Role="Stock" Type="Self.Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Warehouses">
+        <PropertyRef Name="WarehouseID" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="WarehouseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Stock__ZoneID__4BAC3F29">
+    <End Role="StorageZones" Type="Self.StorageZones" Multiplicity="0..1" />
+    <End Role="Stock" Type="Self.Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StorageZones">
+        <PropertyRef Name="ZoneID" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="ZoneID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StorageZo__Wareh__300424B4">
+    <End Role="Warehouses" Type="Self.Warehouses" Multiplicity="1" />
+    <End Role="StorageZones" Type="Self.StorageZones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Warehouses">
+        <PropertyRef Name="WarehouseID" />
+      </Principal>
+      <Dependent Role="StorageZones">
+        <PropertyRef Name="WarehouseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserLogs__UserID__534D60F1">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="UserLogs" Type="Self.UserLogs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UserLogs">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WarehouseManagementEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Barcodes" EntityType="Self.Barcodes" />
+    <EntitySet Name="Clients" EntityType="Self.Clients" />
+    <EntitySet Name="Files" EntityType="Self.Files" />
+    <EntitySet Name="IncomingInvoiceItems" EntityType="Self.IncomingInvoiceItems" />
+    <EntitySet Name="IncomingInvoices" EntityType="Self.IncomingInvoices" />
+    <EntitySet Name="Inventory" EntityType="Self.Inventory" />
+    <EntitySet Name="InventoryResults" EntityType="Self.InventoryResults" />
+    <EntitySet Name="OutgoingInvoiceItems" EntityType="Self.OutgoingInvoiceItems" />
+    <EntitySet Name="OutgoingInvoices" EntityType="Self.OutgoingInvoices" />
+    <EntitySet Name="Products" EntityType="Self.Products" />
+    <EntitySet Name="Reports" EntityType="Self.Reports" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" />
+    <EntitySet Name="Stock" EntityType="Self.Stock" />
+    <EntitySet Name="StorageZones" EntityType="Self.StorageZones" />
+    <EntitySet Name="Suppliers" EntityType="Self.Suppliers" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="UserLogs" EntityType="Self.UserLogs" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <EntitySet Name="Warehouses" EntityType="Self.Warehouses" />
+    <AssociationSet Name="FK__Barcodes__Genera__5BE2A6F2" Association="Self.FK__Barcodes__Genera__5BE2A6F2">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Barcodes" EntitySet="Barcodes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Barcodes__Produc__5AEE82B9" Association="Self.FK__Barcodes__Produc__5AEE82B9">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Barcodes" EntitySet="Barcodes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OutgoingI__Clien__3D5E1FD2" Association="Self.FK__OutgoingI__Clien__3D5E1FD2">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="OutgoingInvoices" EntitySet="OutgoingInvoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Files__UploadedB__4F7CD00D" Association="Self.FK__Files__UploadedB__4F7CD00D">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Files" EntitySet="Files" />
+    </AssociationSet>
+    <AssociationSet Name="FK__IncomingI__Invoi__398D8EEE" Association="Self.FK__IncomingI__Invoi__398D8EEE">
+      <End Role="IncomingInvoices" EntitySet="IncomingInvoices" />
+      <End Role="IncomingInvoiceItems" EntitySet="IncomingInvoiceItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK__IncomingI__Produ__3A81B327" Association="Self.FK__IncomingI__Produ__3A81B327">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="IncomingInvoiceItems" EntitySet="IncomingInvoiceItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK__IncomingI__Suppl__36B12243" Association="Self.FK__IncomingI__Suppl__36B12243">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="IncomingInvoices" EntitySet="IncomingInvoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Inventory__Inven__45F365D3" Association="Self.FK__Inventory__Inven__45F365D3">
+      <End Role="Inventory" EntitySet="Inventory" />
+      <End Role="InventoryResults" EntitySet="InventoryResults" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Inventory__Produ__46E78A0C" Association="Self.FK__Inventory__Produ__46E78A0C">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="InventoryResults" EntitySet="InventoryResults" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OutgoingI__Invoi__403A8C7D" Association="Self.FK__OutgoingI__Invoi__403A8C7D">
+      <End Role="OutgoingInvoices" EntitySet="OutgoingInvoices" />
+      <End Role="OutgoingInvoiceItems" EntitySet="OutgoingInvoiceItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OutgoingI__Produ__412EB0B6" Association="Self.FK__OutgoingI__Produ__412EB0B6">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="OutgoingInvoiceItems" EntitySet="OutgoingInvoiceItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Stock__ProductID__49C3F6B7" Association="Self.FK__Stock__ProductID__49C3F6B7">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Stock" EntitySet="Stock" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reports__Generat__571DF1D5" Association="Self.FK__Reports__Generat__571DF1D5">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Reports" EntitySet="Reports" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Users__RoleID__286302EC" Association="Self.FK__Users__RoleID__286302EC">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Stock__Warehouse__4AB81AF0" Association="Self.FK__Stock__Warehouse__4AB81AF0">
+      <End Role="Warehouses" EntitySet="Warehouses" />
+      <End Role="Stock" EntitySet="Stock" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Stock__ZoneID__4BAC3F29" Association="Self.FK__Stock__ZoneID__4BAC3F29">
+      <End Role="StorageZones" EntitySet="StorageZones" />
+      <End Role="Stock" EntitySet="Stock" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StorageZo__Wareh__300424B4" Association="Self.FK__StorageZo__Wareh__300424B4">
+      <End Role="Warehouses" EntitySet="Warehouses" />
+      <End Role="StorageZones" EntitySet="StorageZones" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserLogs__UserID__534D60F1" Association="Self.FK__UserLogs__UserID__534D60F1">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserLogs" EntitySet="UserLogs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
