@@ -4287,11 +4287,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Хороми\\Desktop\\WarehouseMob\\WarehouseMob\\WarehouseMob.Android\\WarehouseMob.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Хороми\\Documents\\GitHub\\Praktika_PM01\\WarehouseMob\\WarehouseMob\\WarehouseMob.Android\\WarehouseMob.Android.csproj",
       "projectName": "WarehouseMob.Android",
-      "projectPath": "C:\\Users\\Хороми\\Desktop\\WarehouseMob\\WarehouseMob\\WarehouseMob.Android\\WarehouseMob.Android.csproj",
+      "projectPath": "C:\\Users\\Хороми\\Documents\\GitHub\\Praktika_PM01\\WarehouseMob\\WarehouseMob\\WarehouseMob.Android\\WarehouseMob.Android.csproj",
       "packagesPath": "C:\\Users\\Хороми\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Хороми\\Desktop\\WarehouseMob\\WarehouseMob\\WarehouseMob.Android\\obj\\",
+      "outputPath": "C:\\Users\\Хороми\\Documents\\GitHub\\Praktika_PM01\\WarehouseMob\\WarehouseMob\\WarehouseMob.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -4312,8 +4312,8 @@
       "frameworks": {
         "monoandroid13.0": {
           "projectReferences": {
-            "C:\\Users\\Хороми\\Desktop\\WarehouseMob\\WarehouseMob\\WarehouseMob\\WarehouseMob.csproj": {
-              "projectPath": "C:\\Users\\Хороми\\Desktop\\WarehouseMob\\WarehouseMob\\WarehouseMob\\WarehouseMob.csproj"
+            "C:\\Users\\Хороми\\Documents\\GitHub\\Praktika_PM01\\WarehouseMob\\WarehouseMob\\WarehouseMob\\WarehouseMob.csproj": {
+              "projectPath": "C:\\Users\\Хороми\\Documents\\GitHub\\Praktika_PM01\\WarehouseMob\\WarehouseMob\\WarehouseMob\\WarehouseMob.csproj"
             }
           }
         }

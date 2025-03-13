@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "y09k+fXhWNI=",
+  "dgSpecHash": "6mVaWVGqJ8c=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Хороми\\Desktop\\WarehouseMob\\WarehouseMob\\WarehouseMob.Android\\WarehouseMob.Android.csproj",
+  "projectFilePath": "C:\\Users\\Хороми\\Documents\\GitHub\\Praktika_PM01\\WarehouseMob\\WarehouseMob\\WarehouseMob.Android\\WarehouseMob.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Хороми\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Хороми\\.nuget\\packages\\fastandroidcamera\\2.0.0\\fastandroidcamera.2.0.0.nupkg.sha512",
