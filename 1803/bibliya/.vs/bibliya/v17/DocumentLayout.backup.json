@@ -1,0 +1,146 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\source\\repos\\bibliya\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0DCC45D1-7A77-4E16-AF80-95C43B3575FF}|bibliya\\bibliya.csproj|c:\\users\\\u0445\u043E\u0440\u043E\u043C\u0438\\source\\repos\\bibliya\\bibliya\\bookhistorywindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DCC45D1-7A77-4E16-AF80-95C43B3575FF}|bibliya\\bibliya.csproj|solutionrelative:bibliya\\bookhistorywindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DCC45D1-7A77-4E16-AF80-95C43B3575FF}|bibliya\\bibliya.csproj|c:\\users\\\u0445\u043E\u0440\u043E\u043C\u0438\\source\\repos\\bibliya\\bibliya\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0DCC45D1-7A77-4E16-AF80-95C43B3575FF}|bibliya\\bibliya.csproj|solutionrelative:bibliya\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DCC45D1-7A77-4E16-AF80-95C43B3575FF}|bibliya\\bibliya.csproj|c:\\users\\\u0445\u043E\u0440\u043E\u043C\u0438\\source\\repos\\bibliya\\bibliya\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DCC45D1-7A77-4E16-AF80-95C43B3575FF}|bibliya\\bibliya.csproj|solutionrelative:bibliya\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DCC45D1-7A77-4E16-AF80-95C43B3575FF}|bibliya\\bibliya.csproj|c:\\users\\\u0445\u043E\u0440\u043E\u043C\u0438\\source\\repos\\bibliya\\bibliya\\bookhistorywindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0DCC45D1-7A77-4E16-AF80-95C43B3575FF}|bibliya\\bibliya.csproj|solutionrelative:bibliya\\bookhistorywindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DCC45D1-7A77-4E16-AF80-95C43B3575FF}|bibliya\\bibliya.csproj|c:\\users\\\u0445\u043E\u0440\u043E\u043C\u0438\\source\\repos\\bibliya\\bibliya\\editreaderwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DCC45D1-7A77-4E16-AF80-95C43B3575FF}|bibliya\\bibliya.csproj|solutionrelative:bibliya\\editreaderwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DCC45D1-7A77-4E16-AF80-95C43B3575FF}|bibliya\\bibliya.csproj|c:\\users\\\u0445\u043E\u0440\u043E\u043C\u0438\\source\\repos\\bibliya\\bibliya\\editreaderwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0DCC45D1-7A77-4E16-AF80-95C43B3575FF}|bibliya\\bibliya.csproj|solutionrelative:bibliya\\editreaderwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DCC45D1-7A77-4E16-AF80-95C43B3575FF}|bibliya\\bibliya.csproj|c:\\users\\\u0445\u043E\u0440\u043E\u043C\u0438\\source\\repos\\bibliya\\bibliya\\readers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DCC45D1-7A77-4E16-AF80-95C43B3575FF}|bibliya\\bibliya.csproj|solutionrelative:bibliya\\readers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 209,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BookHistoryWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\source\\repos\\bibliya\\bibliya\\BookHistoryWindow.xaml.cs",
+              "RelativeDocumentMoniker": "bibliya\\BookHistoryWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\source\\repos\\bibliya\\bibliya\\BookHistoryWindow.xaml.cs",
+              "RelativeToolTip": "bibliya\\BookHistoryWindow.xaml.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAmwBsAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T14:18:14.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BookHistoryWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\source\\repos\\bibliya\\bibliya\\BookHistoryWindow.xaml",
+              "RelativeDocumentMoniker": "bibliya\\BookHistoryWindow.xaml",
+              "ToolTip": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\source\\repos\\bibliya\\bibliya\\BookHistoryWindow.xaml",
+              "RelativeToolTip": "bibliya\\BookHistoryWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-19T14:17:32.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\source\\repos\\bibliya\\bibliya\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "bibliya\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\source\\repos\\bibliya\\bibliya\\MainWindow.xaml",
+              "RelativeToolTip": "bibliya\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-19T13:03:49.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\source\\repos\\bibliya\\bibliya\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "bibliya\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\source\\repos\\bibliya\\bibliya\\MainWindow.xaml.cs",
+              "RelativeToolTip": "bibliya\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T13:03:45.24Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Readers.cs",
+              "DocumentMoniker": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\source\\repos\\bibliya\\bibliya\\Readers.cs",
+              "RelativeDocumentMoniker": "bibliya\\Readers.cs",
+              "ToolTip": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\source\\repos\\bibliya\\bibliya\\Readers.cs",
+              "RelativeToolTip": "bibliya\\Readers.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABwAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T13:46:18.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EditReaderWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\source\\repos\\bibliya\\bibliya\\EditReaderWindow.xaml.cs",
+              "RelativeDocumentMoniker": "bibliya\\EditReaderWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\source\\repos\\bibliya\\bibliya\\EditReaderWindow.xaml.cs",
+              "RelativeToolTip": "bibliya\\EditReaderWindow.xaml.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAowDgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T13:45:02.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EditReaderWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\source\\repos\\bibliya\\bibliya\\EditReaderWindow.xaml",
+              "RelativeDocumentMoniker": "bibliya\\EditReaderWindow.xaml",
+              "ToolTip": "C:\\Users\\\u0425\u043E\u0440\u043E\u043C\u0438\\source\\repos\\bibliya\\bibliya\\EditReaderWindow.xaml",
+              "RelativeToolTip": "bibliya\\EditReaderWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-19T13:41:44.897Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 209,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

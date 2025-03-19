@@ -1,0 +1,278 @@
+USE [master]
+GO
+/****** Object:  Database [library]    Script Date: 19.03.2025 17:26:08 ******/
+CREATE DATABASE [library]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'library', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\library.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'library_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\library_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT
+GO
+ALTER DATABASE [library] SET COMPATIBILITY_LEVEL = 150
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [library].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [library] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [library] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [library] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [library] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [library] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [library] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [library] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [library] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [library] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [library] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [library] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [library] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [library] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [library] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [library] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [library] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [library] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [library] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [library] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [library] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [library] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [library] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [library] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [library] SET  MULTI_USER 
+GO
+ALTER DATABASE [library] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [library] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [library] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [library] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [library] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [library] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+ALTER DATABASE [library] SET QUERY_STORE = OFF
+GO
+USE [library]
+GO
+/****** Object:  Table [dbo].[BookLoans]    Script Date: 19.03.2025 17:26:08 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[BookLoans](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[reader_id] [int] NULL,
+	[book_id] [int] NULL,
+	[loan_date] [date] NULL,
+	[return_date] [date] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Books]    Script Date: 19.03.2025 17:26:08 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Books](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[title] [nvarchar](200) NOT NULL,
+	[author] [nvarchar](100) NOT NULL,
+	[year] [int] NULL,
+	[type] [nvarchar](50) NOT NULL,
+	[quantity] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Fines]    Script Date: 19.03.2025 17:26:08 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Fines](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[reader_id] [int] NULL,
+	[book_id] [int] NULL,
+	[days_overdue] [int] NULL,
+	[fine_amount] [decimal](10, 2) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Inventory]    Script Date: 19.03.2025 17:26:08 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Inventory](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[book_id] [int] NULL,
+	[condition] [nvarchar](50) NULL,
+	[location] [nvarchar](100) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Librarians]    Script Date: 19.03.2025 17:26:08 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Librarians](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[full_name] [nvarchar](100) NOT NULL,
+	[position] [nvarchar](50) NULL,
+	[phone] [nvarchar](15) NULL,
+	[email] [nvarchar](100) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Readers]    Script Date: 19.03.2025 17:26:08 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Readers](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[full_name] [nvarchar](100) NOT NULL,
+	[library_card_number] [nvarchar](20) NOT NULL,
+	[address] [nvarchar](200) NULL,
+	[phone] [nvarchar](15) NULL,
+	[email] [nvarchar](100) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[BookLoans] ON 
+GO
+INSERT [dbo].[BookLoans] ([id], [reader_id], [book_id], [loan_date], [return_date]) VALUES (2, 2, 1, CAST(N'2023-09-01' AS Date), CAST(N'2023-09-15' AS Date))
+GO
+INSERT [dbo].[BookLoans] ([id], [reader_id], [book_id], [loan_date], [return_date]) VALUES (3, 3, 2, CAST(N'2023-09-05' AS Date), CAST(N'2023-09-20' AS Date))
+GO
+INSERT [dbo].[BookLoans] ([id], [reader_id], [book_id], [loan_date], [return_date]) VALUES (4, 4, 3, CAST(N'2023-09-10' AS Date), CAST(N'2023-09-25' AS Date))
+GO
+INSERT [dbo].[BookLoans] ([id], [reader_id], [book_id], [loan_date], [return_date]) VALUES (5, 5, 4, CAST(N'2023-09-12' AS Date), CAST(N'2023-09-27' AS Date))
+GO
+INSERT [dbo].[BookLoans] ([id], [reader_id], [book_id], [loan_date], [return_date]) VALUES (6, 2, 5, CAST(N'2023-09-15' AS Date), CAST(N'2023-09-30' AS Date))
+GO
+SET IDENTITY_INSERT [dbo].[BookLoans] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Books] ON 
+GO
+INSERT [dbo].[Books] ([id], [title], [author], [year], [type], [quantity]) VALUES (1, N'Война и мир', N'Лев Толстой', 1869, N'Художественная', 5)
+GO
+INSERT [dbo].[Books] ([id], [title], [author], [year], [type], [quantity]) VALUES (2, N'Мастер и Маргарита', N'Михаил Булгаков', 1967, N'Художественная', 3)
+GO
+INSERT [dbo].[Books] ([id], [title], [author], [year], [type], [quantity]) VALUES (3, N'Физика для вузов', N'Иван Иванов', 2020, N'Учебная', 10)
+GO
+INSERT [dbo].[Books] ([id], [title], [author], [year], [type], [quantity]) VALUES (4, N'Основы программирования', N'Петр Петров', 2018, N'Учебная', 7)
+GO
+INSERT [dbo].[Books] ([id], [title], [author], [year], [type], [quantity]) VALUES (5, N'Квантовая механика', N'Сергей Сидоров', 2015, N'Научная', 2)
+GO
+SET IDENTITY_INSERT [dbo].[Books] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Fines] ON 
+GO
+INSERT [dbo].[Fines] ([id], [reader_id], [book_id], [days_overdue], [fine_amount]) VALUES (1, 2, 1, 5, CAST(50.00 AS Decimal(10, 2)))
+GO
+INSERT [dbo].[Fines] ([id], [reader_id], [book_id], [days_overdue], [fine_amount]) VALUES (2, 3, 2, 3, CAST(15.00 AS Decimal(10, 2)))
+GO
+INSERT [dbo].[Fines] ([id], [reader_id], [book_id], [days_overdue], [fine_amount]) VALUES (3, 4, 3, 7, CAST(70.00 AS Decimal(10, 2)))
+GO
+INSERT [dbo].[Fines] ([id], [reader_id], [book_id], [days_overdue], [fine_amount]) VALUES (4, 5, 4, 2, CAST(10.00 AS Decimal(10, 2)))
+GO
+SET IDENTITY_INSERT [dbo].[Fines] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Inventory] ON 
+GO
+INSERT [dbo].[Inventory] ([id], [book_id], [condition], [location]) VALUES (1, 1, N'Хорошее', N'Стеллаж 1')
+GO
+INSERT [dbo].[Inventory] ([id], [book_id], [condition], [location]) VALUES (2, 2, N'Удовлетворительное', N'Стеллаж 2')
+GO
+INSERT [dbo].[Inventory] ([id], [book_id], [condition], [location]) VALUES (3, 3, N'Новое', N'Стеллаж 3')
+GO
+SET IDENTITY_INSERT [dbo].[Inventory] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Librarians] ON 
+GO
+INSERT [dbo].[Librarians] ([id], [full_name], [position], [phone], [email]) VALUES (2, N'Смирнова Ольга Владимировна', N'Главный библиотекарь', N'+7 999 111 2233', N'smirnova@lib.ru')
+GO
+INSERT [dbo].[Librarians] ([id], [full_name], [position], [phone], [email]) VALUES (3, N'Кузнецов Андрей Иванович', N'Библиотекарь', N'+7 999 222 3344', N'kuznetsov@lib.ru')
+GO
+INSERT [dbo].[Librarians] ([id], [full_name], [position], [phone], [email]) VALUES (4, N'Васильева Елена Петровна', N'Библиотекарь', N'+7 999 333 4455', N'vasileva@lib.ru')
+GO
+SET IDENTITY_INSERT [dbo].[Librarians] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Readers] ON 
+GO
+INSERT [dbo].[Readers] ([id], [full_name], [library_card_number], [address], [phone], [email]) VALUES (2, N'Иванов Иван Иванович', N'123456', N'ул. Ленина, 10', N'+7 999 123 4567', N'ivanov@mail.ru')
+GO
+INSERT [dbo].[Readers] ([id], [full_name], [library_card_number], [address], [phone], [email]) VALUES (3, N'Петров Петр Петрович', N'654321', N'ул. Пушкина, 5', N'+7 999 765 4321', N'petrov@mail.ru')
+GO
+INSERT [dbo].[Readers] ([id], [full_name], [library_card_number], [address], [phone], [email]) VALUES (4, N'Сидорова Анна Сергеевна', N'987654', N'пр. Мира, 15', N'+7 999 555 4433', N'sidorova@mail.ru')
+GO
+INSERT [dbo].[Readers] ([id], [full_name], [library_card_number], [address], [phone], [email]) VALUES (5, N'Козлов Дмитрий Алексеевич', N'456789', N'ул. Гагарина, 20', N'+7 999 888 7766', N'kozlov@mail.ru')
+GO
+INSERT [dbo].[Readers] ([id], [full_name], [library_card_number], [address], [phone], [email]) VALUES (6, N'Коровина Карина Николаевна', N'987789', N'Слободской', N'+7 888 252 0425', N'ололололл')
+GO
+SET IDENTITY_INSERT [dbo].[Readers] OFF
+GO
+ALTER TABLE [dbo].[BookLoans]  WITH CHECK ADD FOREIGN KEY([book_id])
+REFERENCES [dbo].[Books] ([id])
+GO
+ALTER TABLE [dbo].[BookLoans]  WITH CHECK ADD FOREIGN KEY([reader_id])
+REFERENCES [dbo].[Readers] ([id])
+GO
+ALTER TABLE [dbo].[Fines]  WITH CHECK ADD FOREIGN KEY([book_id])
+REFERENCES [dbo].[Books] ([id])
+GO
+ALTER TABLE [dbo].[Fines]  WITH CHECK ADD FOREIGN KEY([reader_id])
+REFERENCES [dbo].[Readers] ([id])
+GO
+ALTER TABLE [dbo].[Inventory]  WITH CHECK ADD FOREIGN KEY([book_id])
+REFERENCES [dbo].[Books] ([id])
+GO
+USE [master]
+GO
+ALTER DATABASE [library] SET  READ_WRITE 
+GO

@@ -1,0 +1,25 @@
+﻿<Window x:Class="bibliya.EditReaderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:bibliya"
+        mc:Ignorable="d"
+       Title="Редактирование/добавление читателя" Height="350" Width="400">
+    <Grid Margin="10">
+        <StackPanel>
+            <Label Content="ФИО:" />
+            <TextBox x:Name="FullNameTextBox" />
+            <Label Content="Номер билета:" />
+            <TextBox x:Name="LibraryCardNumberTextBox" />
+            <Label Content="Адрес:" />
+            <TextBox x:Name="AddressTextBox" />
+            <Label Content="Телефон:" />
+            <TextBox x:Name="PhoneTextBox" />
+            <Label Content="Email:" />
+            <TextBox x:Name="EmailTextBox" />
+            <Button Content="Сохранить" Click="SaveButton_Click" Margin="0,10" />
+            <Button Content="Назад" Click="BackButton_Click" Margin="0,10" />
+        </StackPanel>
+    </Grid>
+</Window>
